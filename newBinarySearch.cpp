@@ -5,7 +5,7 @@ using namespace std;
 // A recursive binary search function. It returns
 // location of x in given array arr[l..r] is present,
 // otherwise -1
-int binarySearch(int arr[], int l, int r, int x)
+int binarySearch(vector<int> arr, int l, int r, int x)
 {
 	if (r >= l) {
 		int mid = l + (r - l) / 2;
@@ -32,9 +32,11 @@ int binarySearch(int arr[], int l, int r, int x)
 
 int main(void)
 {
-	int arr[] = { 2, 3, 4, 10, 40 };
+// 	int arr[] = { 2, 3, 4, 10, 40 };
+	vector<int> arr = { 2, 3, 4, 10, 40 };
+	int n = arr.size();
 	int x = 10;
-	int n = sizeof(arr) / sizeof(arr[0]);
+// 	int n = sizeof(arr) / sizeof(arr[0]);
 	int result = binarySearch(arr, 0, n - 1, x);
 	(result == -1)
 		? cout << "Element is not present in array"
